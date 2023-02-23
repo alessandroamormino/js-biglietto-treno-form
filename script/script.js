@@ -41,10 +41,14 @@ let userAgeEl = document.getElementById('userAge');
 // - Bersagliare il bottone di conferma e memorizzare valore in una variabile
 let btnTktPriceEl = document.getElementById('tripPrice');
 
+
 // - Al click del bottone: 
 let tktPriceBase;
 let pricePerKm = 0.21;
 let tripFinalPrice;
+
+// Passenger Name
+let passengerNameEl = document.getElementById('passengerName');
 
 btnTktPriceEl.addEventListener('click', function(){
     // - calcolare il prezzo del biglietto moltiplicando i kilometri a 0.21€ arrotondato alla seconda cifra decimale
@@ -64,12 +68,29 @@ btnTktPriceEl.addEventListener('click', function(){
         tripFinalPrice = tktPriceBase;
     }
 
+
     // - Stampo il prezzo del biglietto in pagina.
     // 1. Console
     console.log(`Numero di Km: ${tripKmEl.value}`);
     console.log(`Età passeggero: ${userAgeEl.value}`);
     console.log(`Prezzo del biglietto: ${tripFinalPrice}€`);
 
+    // Passenger Name
+    console.log(`Nome Passeggero: ${passengerNameEl.value}`);
+
     // 2.In pagina
+
+    
+
+
 });
 
+
+// Empty form calc price
+let btnTktEmptyEl = document.getElementById('tripEmpty');
+
+btnTktEmptyEl.addEventListener('click', function(){
+    passengerNameEl.value = '';
+    tripKmEl.value = '';
+    userAgeEl.value = '';
+})
