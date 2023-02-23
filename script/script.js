@@ -14,8 +14,8 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del bigliett
 
 /*
 
-- Chiedere all'utente il numero di chilometri che deve percorrere con un input e memorizzare il valore in una variabile
-- Chiedere all'utente la sua età con un input e memorizzare il valore in una variabile
+x Bersagliare l'input con il numero dei KM da percorrere e memorizzare il valore in una variabile
+x Bersagliare l'input con l'età dell'utente e memorizzare il valore in una variabile
 - Bersagliare il bottone di conferma e memorizzare valore in una variabile
 - Al click del bottone: 
     - calcolare il prezzo del biglietto moltiplicando i kilometri a 0.21€
@@ -31,4 +31,23 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del bigliett
         - F1 - Stampo il prezzo del biglietto senza sconti in pagina, arrotondato alla seconda cifra decimale
 */
 
+// CODE:
+
+// - Bersagliare l'input con il numero dei KM da percorrere e memorizzare il valore in una variabile
+let tripKmEl = parseInt(document.getElementById('tripKm').value);
+console.log('Numero Km: ' + tripKmEl);
+
+// - Bersagliare l'input con l'età dell'utente e memorizzare il valore in una variabile
+let userAgeEl = parseInt(document.getElementById('userAge').value);
+console.log('Età: ' + userAgeEl);
+
+// - Bersagliare il bottone di conferma e memorizzare valore in una variabile
+let btnTripPriceEl = document.getElementById('tripPrice');
+
+// - Al click del bottone: 
+// - calcolare il prezzo del biglietto moltiplicando i kilometri a 0.21€
+
+btnTripPriceEl.addEventListener('click', function(){
+    console.log('click');
+});
 
