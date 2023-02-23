@@ -58,15 +58,15 @@ btnTktPriceEl.addEventListener('click', function(){
     // ?  SE età dell'utente è minore di 18 (se minorenne)
     if (userAgeEl.value < 18){
         // - calcolo il prezzo del biglietto scontato al 20% arrotondato alla seconda cifra decimale
-        tripFinalPrice = tktPriceBase - (tktPriceBase * 0.2);
+        tripFinalPrice = (tktPriceBase - (tktPriceBase * 0.2)).toFixed(2);
     } else if (userAgeEl.value >= 65){
         // :? ALTRIMENTI SE età dell'utente è maggiore o uguale a 65 (compreso)
         // calcolo il prezzo del biglietto scontato al 40% arrotondato alla seconda cifra decimale
-        tripFinalPrice = tktPriceBase - (tktPriceBase * 0.4);
+        tripFinalPrice = (tktPriceBase - (tktPriceBase * 0.4)).toFixed(2);
     } else {
         // ALTRIMENTI
         // Applico il prezzo base
-        tripFinalPrice = tktPriceBase;
+        tripFinalPrice = tktPriceBase.toFixed(2);
     }
 
 
