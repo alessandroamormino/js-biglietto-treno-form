@@ -8,6 +8,7 @@
 /* Assets */
 body{
     font-family: 'Cutive Mono', monospace;
+    background-color: #F6EFEE;
 }
 
 .container-centered{
@@ -111,6 +112,7 @@ h1 {
 
     font-size: 1.4em;
     background-color: #F3F1C9;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,0.7);
 }
 
 .ticket .info-ticket{
