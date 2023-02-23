@@ -16,38 +16,60 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del bigliett
 
 x Bersagliare l'input con il numero dei KM da percorrere e memorizzare il valore in una variabile
 x Bersagliare l'input con l'età dell'utente e memorizzare il valore in una variabile
-- Bersagliare il bottone di conferma e memorizzare valore in una variabile
+x Bersagliare il bottone di conferma e memorizzare valore in una variabile
 - Al click del bottone: 
-    - calcolare il prezzo del biglietto moltiplicando i kilometri a 0.21€
-    - calcolo il prezzo del biglietto scontato al 20% arrotondato alla seconda cifra decimale (uso la funzione toFixed(n) che arrotonda la cifra 
-    alla n cifra decimale e converte in stringa il numero)
-    - calcolo il prezzo del biglietto scontato al 40% arrotondato alla seconda cifra decimale (uso la funzione toFixed(n) che arrotonda la cifra 
-    alla n cifra decimale e converte in stringa il numero)
+    x calcolare il prezzo del biglietto moltiplicando i kilometri a 0.21€
     ?  SE età dell'utente è minore di 18 (se minorenne)
-        - V1 - Stampo il prezzo del biglietto con sconto al 20% in pagina
+        x V1 - calcolo il prezzo del biglietto scontato al 20% arrotondato alla seconda cifra decimale (uso la funzione toFixed(n) che arrotonda la cifra 
+    alla n cifra decimale e converte in stringa il numero) e stampo il prezzo
     :? ALTRIMENTI SE età dell'utente è maggiore o uguale a 65 (compreso)
-        - V2 - Stampo il prezzo del biglietto con sconto al 40% in pagina
+        x V2 - calcolo il prezzo del biglietto scontato al 40% arrotondato alla seconda cifra decimale (uso la funzione toFixed(n) che arrotonda la cifra 
+    alla n cifra decimale e converte in stringa il numero) e stampo il prezzo 
     ALTRIMENTI
-        - F1 - Stampo il prezzo del biglietto senza sconti in pagina, arrotondato alla seconda cifra decimale
+        x F1 - Applico il prezzo base 
+    - Stampo il prezzo del biglietto in pagina.
 */
 
 // CODE:
 
 // - Bersagliare l'input con il numero dei KM da percorrere e memorizzare il valore in una variabile
-let tripKmEl = parseInt(document.getElementById('tripKm').value);
-console.log('Numero Km: ' + tripKmEl);
+let tripKmEl = document.getElementById('tripKm');
 
 // - Bersagliare l'input con l'età dell'utente e memorizzare il valore in una variabile
-let userAgeEl = parseInt(document.getElementById('userAge').value);
-console.log('Età: ' + userAgeEl);
+let userAgeEl = document.getElementById('userAge');
 
 // - Bersagliare il bottone di conferma e memorizzare valore in una variabile
-let btnTripPriceEl = document.getElementById('tripPrice');
+let btnTktPriceEl = document.getElementById('tripPrice');
 
 // - Al click del bottone: 
-// - calcolare il prezzo del biglietto moltiplicando i kilometri a 0.21€
+let tktPriceBase;
+let pricePerKm = 0.21;
+let tripFinalPrice;
 
-btnTripPriceEl.addEventListener('click', function(){
-    console.log('click');
+btnTktPriceEl.addEventListener('click', function(){
+    // - calcolare il prezzo del biglietto moltiplicando i kilometri a 0.21€ arrotondato alla seconda cifra decimale
+    tktPriceBase = (parseInt(tripKmEl.value) * pricePerKm).toFixed(2);
+
+    // ?  SE età dell'utente è minore di 18 (se minorenne)
+    if (userAgeEl.value < 18){
+        // - calcolo il prezzo del biglietto scontato al 20% arrotondato alla seconda cifra decimale
+        tripFinalPrice = tktPriceBase - (tktPriceBase * 0.2);
+    } else if (userAgeEl.value >= 65){
+        // :? ALTRIMENTI SE età dell'utente è maggiore o uguale a 65 (compreso)
+        // calcolo il prezzo del biglietto scontato al 40% arrotondato alla seconda cifra decimale
+        tripFinalPrice = tktPriceBase - (tktPriceBase * 0.4);
+    } else {
+        // ALTRIMENTI
+        // Applico il prezzo base
+        tripFinalPrice = tktPriceBase;
+    }
+
+    // - Stampo il prezzo del biglietto in pagina.
+    // 1. Console
+    console.log(`Numero di Km: ${tripKmEl.value}`);
+    console.log(`Età passeggero: ${userAgeEl.value}`);
+    console.log(`Prezzo del biglietto: ${tripFinalPrice}€`);
+
+    // 2.In pagina
 });
 
