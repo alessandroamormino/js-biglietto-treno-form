@@ -4,36 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Biglietto del Treno Form</title>
 </head>
 <body>
 
     <div class="container-centered">
+        <h1>Calculate the price of your ticket</h1>
 
         <!-- Calculate ticket price -->
         <div class="calcPrice">
-            <!-- Passenger Name -->
-            <label for="passengerName">Passenger Name:</label>
-            <input type="text" id="passengerName" name="passengerName">
+            <div class="name">
+                <!-- Passenger Name -->
+                <label for="passengerName">Name:</label>
+                <input type="text" id="passengerName" name="passengerName">
+            </div>
+            <div class="surname">
+                <label for="passengerSurname">Surname:</label>
+                <input type="text" id="passengerSurname" name="passengerSurname">
+            </div>
 
-            <label for="passengerSurname">Passenger Surname:</label>
-            <input type="text" id="passengerSurname" name="passengerSurname">
 
             <!-- Input KM -->
-            <label for="tripKm">Km</label>
-            <input type="number" id="tripKm" name="tripKm" min="0">
+            <div class="km">
+                <label for="tripKm">Km: </label>
+                <input type="number" id="tripKm" name="tripKm" min="0">
+            </div>
 
-            <!-- Input Age -->
-            <label for="userAge">Age</label>
-            <input type="number" id="userAge" name="userAge" min="0">
+            <div class="age">
+                <!-- Input Age -->
+                <label for="userAge">Age: </label>
+                <input type="number" id="userAge" name="userAge" min="0">
+            </div>
 
-            <button id="tripPrice">Calculate</button>
-            <button id="tripEmpty">Empty</button>
+            <div class="trip-btn">
+                <button id="tripPrice" class="btn">Calculate</button>
+                <button id="tripEmpty" class="btn">Empty</button>
+            </div>
         </div>
 
 
+        <!-- ticket -->
+        <div class="ticket">
+            <div class="info-ticket">
+                <div class="info-ticket-left">
+                    <h2>HOGWARTS EXPRESS</h2>
+                    <div class="passenger-name"></div>
+                    <div class="trip-from-to">
+                        <div class="depart">KING'S CROSS</div>
+                        <div class="arrive">HOGSMEADE</div>
+                    </div>
+                    <div class="trip-info">
+                        <div class="date">24 FEB 2023</div>
+                        <div class="time">11:00 AM</div>
+                        <div class="carriage">9</div>
+                        <div class="seat">4C</div>
+                    </div>
+                    <div class="price-info">
+                        <div class="info-km"></div>
+                        <div class="info-price"></div>
+                    </div>
+                </div>
+                <div class="info-ticket-right">
+                    asd
+                </div>
+            </div>
 
+
+
+
+        </div>
 
 
 

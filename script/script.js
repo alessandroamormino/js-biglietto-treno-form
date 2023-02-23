@@ -80,9 +80,14 @@ btnTktPriceEl.addEventListener('click', function(){
     console.log(`Nome Passeggero: ${passengerNameEl.value} ${passengerSurnameEl.value}`);
 
     // 2.In pagina
+    let passengerEl = document.querySelector('.ticket .info-ticket-left .passenger-name');
+    passengerEl.innerHTML = `${passengerNameEl.value} ${passengerSurnameEl.value}`;
 
-    
+    let infoKmEl = document.querySelector('.info-ticket .info-ticket-left .price-info .info-km');
+    infoKmEl.innerHTML = `KM: ${tripKmEl.value}`
 
+    let priceTripEl = document.querySelector('.info-ticket .info-ticket-left .price-info .info-price');
+    priceTripEl.innerHTML = `Price: ${tripFinalPrice}€`
 
 });
 
