@@ -49,6 +49,7 @@ let tripFinalPrice;
 
 // Passenger Name
 let passengerNameEl = document.getElementById('passengerName');
+let passengerSurnameEl = document.getElementById('passengerSurname');
 
 btnTktPriceEl.addEventListener('click', function(){
     // - calcolare il prezzo del biglietto moltiplicando i kilometri a 0.21€ arrotondato alla seconda cifra decimale
@@ -75,8 +76,8 @@ btnTktPriceEl.addEventListener('click', function(){
     console.log(`Età passeggero: ${userAgeEl.value}`);
     console.log(`Prezzo del biglietto: ${tripFinalPrice}€`);
 
-    // Passenger Name
-    console.log(`Nome Passeggero: ${passengerNameEl.value}`);
+    // Passenger Name & Surname
+    console.log(`Nome Passeggero: ${passengerNameEl.value} ${passengerSurnameEl.value}`);
 
     // 2.In pagina
 
@@ -91,6 +92,7 @@ let btnTktEmptyEl = document.getElementById('tripEmpty');
 
 btnTktEmptyEl.addEventListener('click', function(){
     passengerNameEl.value = '';
+    passengerSurnameEl.value = '';
     tripKmEl.value = '';
     userAgeEl.value = '';
 })
