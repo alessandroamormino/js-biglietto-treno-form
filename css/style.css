@@ -104,13 +104,13 @@ h1 {
 
 .ticket{
     width: 100%;
-    height: 400px;
     margin-top: 100px;
-    /* test */
 
     border: 2px solid black;
     border-radius: 15px;
 
+    font-size: 1.4em;
+    background-color: #F3F1C9;
 }
 
 .ticket .info-ticket{
@@ -118,25 +118,101 @@ h1 {
     /* test */
     display: flex;
 
-    margin: 1em;
+    margin: .8em;
 }
 
-.ticket .info-ticket * {
-    border: 1px solid black;
+.ticket h2 {
+    font-size: 2.5em;
+    padding: .2em 0;
+    text-align: center;
+    color: #F3F1C9;
+    background-color: black;
 }
 
 .ticket .info-ticket .info-ticket-left {
     width: 70%;
-    background-color: #0000ff20;
     border: 2px solid #000000;
 }
 
 .ticket .info-ticket .info-ticket-right {
     width: 30%;
-    background-color: #ff000020;
     border: 2px solid black;
     border-left: none;
 }
+
+.trip-from-to {
+    display: flex;  
+
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.depart, 
+.arrive {
+    width: 50%;
+    padding: .5em;
+}
+
+.depart{
+    border-right: 2px solid black;
+}
+
+.trip-info {
+    display: flex;
+
+    border-bottom: 2px solid black;
+}
+
+.trip-info .date, 
+.trip-info .time {
+    width: 35%;
+    border-right: 2px solid black;
+    padding: .5em;
+}
+
+.trip-info .carriage, 
+.trip-info .seat {
+    width: 15%;
+    padding: .5em;
+}
+
+.trip-info .carriage {
+    border-right: 2px solid black;
+}
+
+.trip-container{
+    display: flex;
+}
+
+.trip-container .passenger-name {
+    width: 50%;
+    border-right: 2px solid black;
+    padding: .5em;
+}
+
+.trip-container .price-info {
+    display: flex;
+    width: 50%;
+}
+
+.trip-container .price-info .info-km, 
+.trip-container .price-info .info-price {
+    width: 50%;
+    padding: .5em;
+}
+
+.trip-container .price-info .info-km {
+    border-right: 2px solid black;
+}
+
+.info-ticket-right {
+    background-color: #831819;
+}
+
+.info-ticket-right img{
+    width: 100%;
+}
+
 
 
 
